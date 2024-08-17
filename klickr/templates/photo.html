@@ -2,10 +2,6 @@
 {% block content %}
     <h2>Photo {{ photo_data["id"] }}</h2>
     <div class="float-left">
-        <div>
-            <a href='/photos/{{ photo_data["id"]-1 }}'>&larr; Previous</a>
-            <a class="float-right" href='/photos/{{ photo_data["id"]+1 }}'>Next &rarr;</a>
-        </div>
         <img src="/photos/{{ photo_data['id']}}/original"></img>
         <div>
             <a href='/photos/{{ photo_data["id"]-1 }}'>&larr; Previous</a>

@@ -17,16 +17,6 @@ app = Flask(__name__)
 
 celery = Celery(__name__, broker=config.CELERY_BROKER_URL)
 
-@app.context_processor
-def template_globals():
-    return {
-        "photo_url": photo_url
-    }
-
-def photo_url(photo_id, size):
-    # return config.MINIO_BASE_URL + f"/{photo_id}/{size}.jpg"
-    return f"/download/{photo_id}/{size}.jpg"
-
 @app.route('/')
 def index():
     with sqlite3.connect(config.DATABASE_URL) as conn:
