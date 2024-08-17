@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Photo {{ photo_data["id"] }}</h2>
+    <div class="float-left">
+        <div>
+            <a href='/photos/{{ photo_data["id"]-1 }}'>&larr; Previous</a>
+            <a class="float-right" href='/photos/{{ photo_data["id"]+1 }}'>Next &rarr;</a>
+        </div>
+        <img src="/photos/{{ photo_data['id']}}/original"></img>
+        <div>
+            <a href='/photos/{{ photo_data["id"]-1 }}'>&larr; Previous</a>
+            <a class="float-right" href='/photos/{{ photo_data["id"]+1 }}'>Next &rarr;</a>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <br>
+    <div>
+    Download:
+    <a href="{{ photo_data['small'] }}">small</a>
+    | <a href="{{ photo_data['medium'] }}">medium</a>
+    | <a href="{{ photo_data['large'] }}">large</a>
+    | <a href="{{ photo_data['original'] }}">original</a>
+    </div>
+
+
+{% endblock %}

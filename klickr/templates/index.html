@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Photos</h2>
+    {% if photos %}
+        {% for photo in photos %}
+            <a class="photo-link" href='/photos/{{ photo["id"] }}'>
+                <img
+                class="img-thumbnail"
+                src='/photos/{{ photo["id"] }}/original'></img>
+            </a>
+        {% endfor %}
+    {% else %}
+        <em>No photos to show</em>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Upload New Image</h2>
+    <form class="form" action="" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="photo">Select a photo to upload</label>
+            <input type="file" name="photo" value="photo" id="photo">
+        </div>
+        <input type="submit" value="Upload">
+    </form>
+</form>
+{% endblock %}
