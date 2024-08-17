@@ -22,6 +22,15 @@ Below are the key steps I followed to build this project:
    - Configured the Celery worker to use Redis as the message broker.
    - Uploaded processed images (thumbnails and resized versions) back to the Minio server.
   
+### Run
+To start the application and its services, run the following command:
+```bash
+docker-compose up -d --build
+```
+Once the services are up and running:
+- Web Application: Open your browser and navigate to http://localhost:5000 to access the Klickr web interface.
+- Minio Console: Open your browser and navigate to http://localhost:9001 to access the Minio management console. To log into the Minio console, use the credentials specified in the `docker-compose.yaml` file.
+  
 ### Acknowledgments
 
 The idea for this project came from the [Klickr](https://github.com/pipalacademy/klickr) by [Pipal Academy](https://pipal.in/). This project has been updated and modified to use Minio (instead of S3) and Celery (instead of RQ). The UI (HTML files) remains unchanged, as the main focus for working on this project was backend development.
