@@ -1,5 +1,5 @@
 # Klickr
-Klickr is a miniscule clone of Flickr, an image-sharing app. This project was created for learning and practice purposes. Klickr uses the following technologies:
+Klickr is a miniscule clone of Flickr, an image-sharing app. This project was created for learning and backend practice purposes. Klickr uses the following technologies:
 - *Flask*: For serving web requests (upload, download, list images).
 - *Minio*: For storing images in a private S3-compatible object storage.
 - *Celery*: For processing images, such as generating thumbnails and resizing images.
@@ -10,17 +10,17 @@ Below are the key steps I followed to build this project:
 ### Steps to Create the Project:
 
 1. **Set Up a Basic Flask Application**:
-   - Created a simple "Hello, World!" Flask application.
-   - Ensured that the Flask app could connect to the Minio server upon startup.
-   - Integrated an SQLite3 database, using a `schema.sql` file to create necessary tables.
+   - Create a simple "Hello, World!" Flask application.
+   - Ensure that the Flask app is connecting to the Minio server upon startup.
+   - Integrate a SQLite3 database, using the `schema.sql` file to create necessary tables.
 
 2. **Implement Core Endpoints**:
-   - Developed Flask endpoints for users to upload, download, and list images.
+   - Create/implement the Flask endpoints for users to upload, download, and list images.
 
 3. **Integrate Celery for Asynchronous Image Processing**:
-   - Created a Celery task that automatically generates thumbnails and resizes images upon upload.
-   - Configured the Celery worker to use Redis as the message broker.
-   - Uploaded processed images (thumbnails and resized versions) back to the Minio server.
+   - Create a Celery task that automatically generates thumbnails and resizes images upon upload.
+   - Configure the Celery worker to use Redis as the message broker.
+   - Implement the functionality to upload the processed images (thumbnails and resized versions) back to the Minio server.
   
 ### Run
 To start the application and its services, run the following command:
@@ -28,8 +28,8 @@ To start the application and its services, run the following command:
 docker-compose up -d --build
 ```
 Once the services are up and running:
-- Web Application: Open your browser and navigate to http://localhost:5000 to access the Klickr web interface.
-- Minio Console: Open your browser and navigate to http://localhost:9001 to access the Minio management console. To log into the Minio console, use the credentials specified in the `docker-compose.yaml` file.
+- Web Application: Open your browser and navigate to `http://localhost:5000` to access the Klickr web interface.
+- Minio Console: Open your browser and navigate to `http://localhost:9001` to access the Minio management console. To log into the Minio console, use the credentials specified in the `docker-compose.yaml` file.
   
 ### Acknowledgments
 
